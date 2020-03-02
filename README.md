@@ -3,5 +3,12 @@ My First Repository
                                                    Mindset
 To give you a better sense of how the two mindset work, imagine - as vividly as you can - mthat you are a you are young adult having a really bad day. 
 One day you go to the class that is really important to you and that you like a lot.The professor returns the midterm papers to the class you got c++.you are very disappointed.That evening on the way back to your home,you find that you have gotten a parking ticket.Being really frustated,you call your bestfriend to share your experience but are sort of brushed off.
-
+                                                    Some Basic terminology
 A commit, or "revision", is an individual change to a file (or set of files). It's like when you save a file, except with Git, every time you save it creates a unique ID (a.k.a. the "SHA" or "hash") that allows you to keep record of what changes were made when and by who. Commits usually contain a commit message which is a brief description of what changes were made.
+                                                  Some Basic Terminology
+Repository: A Git Repository, or a repo, is a folder that you’ve told Git to help you track file changes.
+Branch: A branch is an independent line of development. You can think of it as a brand new working directory.
+Fork: A fork is a personal copy of another user’s repository that lives on your account.
+Clone: A clone is simply a copy of a repository that lives on your computer instead of on a server.
+Commit: A commit is a set of one or more changes to a file(or a set of files). Every time you save, it creates a unique ID(“hash”) which helps it keep track of the history.
+Master: The default development branch. Whenever you create a git repo, a branch named “master” is created which becomes the default active branch.
