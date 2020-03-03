@@ -16,3 +16,11 @@ Master: The default development branch. Whenever you create a git repo, a branch
 
 It's all about branching and merging.
 here is details i preffer this channle :https://www.youtube.com/watch?v=oPpnCh7InLY&list=PLozRqGzj97d02YjR5JVqDwN2K0cAiT7VK&index=2
+
+
+Git Branching - Basic Branching and Merging
+i think its very helpful : https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+
+
+
+
