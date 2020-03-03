@@ -12,3 +12,7 @@ Fork: A fork is a personal copy of another user’s repository that lives on you
 Clone: A clone is simply a copy of a repository that lives on your computer instead of on a server.
 Commit: A commit is a set of one or more changes to a file(or a set of files). Every time you save, it creates a unique ID(“hash”) which helps it keep track of the history.
 Master: The default development branch. Whenever you create a git repo, a branch named “master” is created which becomes the default active branch.
+
+
+It's all about branching and merging.
+here is details i preffer this channle :https://www.youtube.com/watch?v=oPpnCh7InLY&list=PLozRqGzj97d02YjR5JVqDwN2K0cAiT7VK&index=2
