@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 Day 1</title>
+    <link rel="icon" href="Home.png" type="images">
+
+</head>
+
+    <body>
+        <h1>An End-to-End Introduction to Generative Adversarial Networks(GANs)</h1>
+        <small ><i>Raghav Agrawal — Published On October 20, 2021 and Last Modified On June 2nd, 2023
+        </i></small>
+        
+        <p><strong><i>This article was published as a part of the <a href="https://datahack.analyticsvidhya.com/contest/data-science-blogathon-13/" target="_blank" rel="noopener">Data Science Blogathon</a></strong></i></p>
+
+        <p>There are many ways a machine can be taught to generate an output on unseen data. The technological advancement in different sectors has left everyone shocked. we are now at a point where deep learning and neural networks are so powerful that can generate a new human face from scratch that does not exist before but looks real based on some trained data. The technique is none other than GAN(Generative Adversarial Network) which is our topic of study. Let’s look at the table of content to understand the main topics we will cover.</p>
+
+        <img src="GANs.png" alt="GANs">
+
+        <p>
+            Paint by holding down the mouse button and moving it.
+            <a href="" download="GANs.png">Download the GANs Picture</a>
+
+            <br><br>
+
+            More about anchor tag ? <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#browser_compatibility" target="_blank" rel="noopener">MDN Web Docs</a>
+        </p>  
+
+        <h2>Table of contents</h2>
+        <ul>
+            <li> What are Generative Adversarial Networks (GANs)?</li> 
+            <li> Applications of Generative Adversarial Networks (GANs)</li>
+            <li>Components of Generative Adversarial Networks (GANs) </li> 
+            <li>Training & Prediction of Generative Adversarial Networks (GANs)</li> 
+            <li>Generative Adversarial Networks (GANs) Loss Function</li> 
+            <li>Challenges Faced by Generative Adversarial Networks (GANs)</li> 
+            <li>Different Types of Generative Adversarial Networks (GANs)</li> 
+            <li>Steps to Implement Basic GAN</li> 
+            <li>Practical Implementation of Generative Adversarial Networks</l<li> (GANs) on MNIST Dataset</li>
+            <li>End Notes</li>
+        </ul>
+
+        <h2> What are Generative Adversarial Networks (GANs)?</h2>
+        <p><b>Generative Adversarial Networks (GANs)</b> were developed in 2014 by Ian Goodfellow and his teammates. GAN is basically an approach to generative modeling that generates a new set of data based on training data that look like training data. GANs have two main blocks(two neural networks) which compete with each other and are able to capture, copy, and analyze the variations in a dataset. The two models are usually called Generator and Discriminator which we will cover in Components on GANs. To understand the term GAN let’s break it into separate three parts</p>
+
+        <ul>
+            <li><strong>Generative </strong> – <em>To learn a generative model, which describes how data is generated in terms of a probabilistic model. In simple words, it explains how data is generated visually.</em></li>
+            <li><strong>Adversarial </strong> –<em> The training of the model is done in an adversarial setting.</em></li>
+            <li><strong>Networks </strong>– <em>use deep neural networks for training purposes.</em></li>
+        </ul>
+
+        <p>The generator network takes random input (typically noise) and generates samples, such as images, text, or audio, that resemble the training data it was trained on. The goal of the generator is to produce samples that are indistinguishable from real data.<br>
+
+        The discriminator network, on the other hand, tries to distinguish between real and generated samples. It is trained with real samples from the training data and generated samples from the generator. The discriminator’s objective is to correctly classify real data as real and generated data as fake.<br>
+
+        The training process involves an adversarial game between the generator and the discriminator. The generator aims to produce samples that fool the discriminator, while the discriminator tries to improve its ability to distinguish between real and generated data. This adversarial training pushes both networks to improve over time.</p><br><br>
+
+
+
+        <img style="display: block; margin: 0 auto;" src="https://media.arxiv-vanity.com/render-output/5891114/images/basicGAN.png" alt="GANs"  width="800" height="400">
+
+        <small style="text-align: right;">Online Image Display</small>
+                                        
+        <p>As training progresses, the generator becomes more adept at producing realistic samples, while the discriminator becomes more skilled at differentiating between real and generated data. Ideally, this process converges to a point where the generator is capable of generating high-quality samples that are difficult for the discriminator to distinguish from real data.</p>
+
+        <p>GANs have demonstrated impressive results in various domains, such as image synthesis, text generation, and even video generation. They have been used for tasks like generating realistic images, creating deepfakes, enhancing low-resolution images, and more. GANs have greatly advanced the field of generative modeling and have opened up new possibilities for creative applications in artificial intelligence.</p>
+            
+        <h3>Why GANs was Developed? </h3>
+
+        <p> Machine learning algorithms and neural networks can easily be fooled to misclassify things by adding some amount of noise to data. After adding some amount of noise, the chances of misclassifying the images increase. Hence the small rise that, is it possible to implement something that neural networks can start visualizing new patterns like sample train data. Thus GANs were built that generate new fake results similar to the original. </p>
+
+        <h2>Applications of Generative Adversarial Networks (GANs)</h2> 
+
+        Reading about GANs is too exciting and when you will read their application then I hope that excitement will reach the sky and then study the working of GANs creates a different impact on learning.
+        <ol>
+            <li>Generate new data from available data – It means generating new samples from an available sample that is not similar to a real one.</li>
+            <li>Generate realistic pictures of people that have never existed.
+            </li>
+            <li>Gans is not limited to Images, It can generate text, articles, songs, poems, etc.</li>
+            <li>Generate Music by using some clone Voice – If you provide some voice then GANs can generate a similar clone feature of it. In this research paper, researchers from NIT in Tokyo proposed a system that is able to generate melodies from lyrics with help of learned relationships between notes and subjects.</li>
+            <li>Text to Image Generation (Object GAN and Object Driven GAN)
+                Creation of anime characters in Game Development and animation production.</li>
+            <li>
+                Image to Image Translation – We can translate one Image to another without changing the background of the source image. For example, Gans can replace a dog with a cat.</li>
+            <li>Low resolution to High resolution – If you pass a low-resolution Image or video, GAN can produce a high-resolution Image version of the same.</li>
+            <li>Prediction of Next Frame in the video – By training a neural network on small frames of video, GANs are capable to generate or predict a small next frame of video. For example, you can have a look at below GIF</li><br><br>
+
+            <img src="https://editor.analyticsvidhya.com/uploads/90260generte_video.gif" alt="GANs" width="500" height="300">
+            <small>Prediction of next frame in a small video. Image 1</small>
+
+            <br><li>Interactive Image Generation – It means that GANs are capable to generate images and video footage in an art form if they are trained on the right real dataset.
+            </li>
+            <li>Speech – Researchers from the College of London recently published a system called GAN-TTS that learns to generate raw audio through training on 567 corpora of speech data</li>
+            <li>Face Aging – GANs can be used to generate a face of a person at different ages. For example, you can have a look at below GIF
+            </li>
+        </ol>
+        <p>
+            Research on GANs is going at its peak, and In upcoming years we are going to see GANs producing high-quality video, audio, images. AS already Microsoft has collaborated with OpenAI to work on GPT and explore the power of GAN at the next level.
+        </p>
+
+
+        <h2>Components of Generative Adversarial Networks (GANs)</h2>
+
+
+        <h3>What is Geometric Intuition behind the working of GANs?</h3>
+        <p>Two major components of GANs are Generator and Discriminator. The role of the generator is like a thief to generate the fake samples based on the original sample and make the discriminator fool to understand Fake as real. On the other hand, a Discriminator is like a Police whose role is to identify the abnormalities in the samples created by Generator and classify them as Fake or real. This competition between both the component goes on until the level of perfection is achieved where Generator wins making a Discriminator fool on fake data.
+        </p>
+
+        <img src="https://editor.analyticsvidhya.com/uploads/68249components_of_GAN.jfif" alt="GANs" width="500" height="300">
+
+        <p>Now let us understand, what is this two-component to understand the training process of GAN intuitively.</p>
+
+        <ol>
+            <li><b>Discriminator</b> – It is a supervised approach means It is a simple classifier that predicts data is fake or real. It is trained on real data and provides feedback to a generator.</li>
+            <li><b>Generator </b>– It is an unsupervised learning approach. It will generate data that is fake data based on original(real) data. It is also a neural network that has hidden layers, activation, loss function. Its aim is to generate the fake image based on feedback and make the discriminator fool that it cannot predict a fake image. And when the discriminator is made a fool by the generator, the training stops and we can say that a generalized GAN model is created.</li>
+
+        </ol>
+
+        <img src="https://editor.analyticsvidhya.com/uploads/28005GANS_working.jpg" alt="GANs" width="500" height="300">
+
+        <p>
+            Here the generative model captures the distribution of data and is trained in such a manner to generate the new sample that tries to maximize the probability of the discriminator to make a mistake(maximize discriminator loss). The discriminator on other hand is based on a model that estimates the probability that the sample it receives is from training data not from the generator and tries to classify it accurately and minimize the GAN accuracy. Hence the GAN network is formulated as a minimax game where the Discriminator is trying to minimize its reward V(D, G) and the generator is trying to maximize the Discriminator loss.
+
+        </p>
+
+        <h2>Leave a Comment</h2>
+        <form>
+        
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter your name" required><br>
+        
+            <br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+        
+            <br>
+            <label for="Comment">Your Comment Please</label><br>
+
+            <textarea name="" id="" cols="30" rows="10" placeholder="Type your Comment here" required></textarea><br>
+            <br>
+            <input type="submit" value="Submit">
+
+        </form>
+        <small>You wanna registered! </small>
+        <a href="register.html">Click here</a>
+        
+    </body>
+
+</html>
